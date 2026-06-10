@@ -1,6 +1,8 @@
 
-header h1{
+h1{
     text-align: center;
+    z-index: 100;
+    color: #fff;
 }
 
 nav{
@@ -8,12 +10,21 @@ nav{
     font-weight: bold;
     display: flex;
     justify-content: space-evenly;
+    background-color: #800080;
+    width: 100%;
+    border-radius: 10px;
 }
 
 nav a{
     text-decoration: none;
+    color: #fff;
 }
 nav a:hover{
     color: black;
     cursor: pointer;
+}
+.home{
+    background-image: url("group.jpg");
+    background-size:cover;
+    height: 100vh;
 }
