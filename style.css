@@ -17,7 +17,7 @@ header{
 }
 nav{
     display: flex;
-    gap: 100px;
+    gap: 70px;
     justify-content: space-evenly;
 }
 a{
