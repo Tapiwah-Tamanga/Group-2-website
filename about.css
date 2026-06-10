@@ -1,0 +1,23 @@
+body{
+    background-image: url("mc.jpg");
+    color: black;
+    text-align: center;
+    font-family: arial;
+}
+
+img{
+    width: 300px;
+    height: 250px;
+}
+
+.info-box{
+    text-align: center;
+}
+.box{
+    background: white;
+    color: black;
+    width: 200px;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
