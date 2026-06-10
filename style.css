@@ -1,47 +1,41 @@
 
-header h1{
+h1{
     text-align: center;
+    z-index: 100;
+    color: #fff;
 }
 
-nav{
+header{
     text-align: center;
     font-weight: bold;
     display: flex;
+    background-color: #800080;
+    width: 100%;
+    border-radius: 10px;
+    justify-content: space-between;
+    gap: 10px;
+}
+nav{
+    display: flex;
+    gap: 100px;
     justify-content: space-evenly;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+a:hover{
+    color: black;
+    cursor: pointer;
 }
 
 nav a{
     text-decoration: none;
+    color: #fff;
 }
 nav a:hover{
     color: black;
     cursor: pointer;
-}
-.food{
-    width: 50em;
-    height:50em;
-}
-.food1{
-    width:50em;
-    height:50em;
-}
-.food2{
-    width:50em;
-    height:50em;
-}
-.food3{
-    width:50em;
-    height:50em;
-}
-.food4{
-    width:50em;
-    height:50em;
-}
-.drinks{
-    width:50em;
-    height:50em;
-}
-.drinks1{
-    width:50em;
-    height:50em;
 }
