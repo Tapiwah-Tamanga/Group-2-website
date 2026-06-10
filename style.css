@@ -5,14 +5,30 @@ h1{
     color: #fff;
 }
 
-nav{
+header{
     text-align: center;
     font-weight: bold;
     display: flex;
-    justify-content: space-evenly;
     background-color: #800080;
     width: 100%;
     border-radius: 10px;
+    justify-content: space-between;
+    gap: 10px;
+}
+nav{
+    display: flex;
+    gap: 100px;
+    justify-content: space-evenly;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+a:hover{
+    color: black;
+    cursor: pointer;
 }
 
 nav a{
