@@ -39,8 +39,3 @@ nav a:hover{
     color: black;
     cursor: pointer;
 }
-.home{
-    background-image: url("group.jpg");
-    background-size:cover;
-    height: 100vh;
-}
