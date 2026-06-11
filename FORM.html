@@ -403,46 +403,36 @@
 </div>
 
 <script>
-  // Food item names and prices (index 0 = item 1, index 1 = item 2, etc.)
   var names  = ["Jollof Rice", "Grilled Chicken", "Beef Burger", "Veggie Wrap", "Mango Smoothie"];
   var emojis = ["<img src='rice and chicken strips.jpg' alt='Rice'>", "<img src='chicken wrap.jpg' alt='Chicken'>", "<img src='pepperoni pizza.jpg' alt='Pizza'>", "<img src='seasoned chips.jpg' alt='Cake'>", "<img src='fanta orange.jpg' alt='Drink'>"];
   var prices = [3500, 4200, 3800, 2800, 1500];
 
-  // Quantities start at 0 for all items
   var quantities = [0, 0, 0, 0, 0];
 
-  // Called when + or − is clicked
-  // id = 1 to 5, change = +1 or -1
   function changeQty(id, change) {
     var index = id - 1; // convert to array index (0–4)
 
-    // Update the quantity — don't let it go below 0
     quantities[index] = quantities[index] + change;
     if (quantities[index] < 0) {
       quantities[index] = 0;
     }
 
-    // Update the number shown on screen
     document.getElementById("qty" + id).textContent = quantities[index];
 
-    // Refresh the summary section
     updateSummary();
   }
 
-  // Rebuild the order summary every time something changes
   function updateSummary() {
     var linesHTML = "";
     var total = 0;
     var anyAdded = false;
 
-    // Go through each item
     for (var i = 0; i < 5; i++) {
       if (quantities[i] > 0) {
         anyAdded = true;
         var subtotal = quantities[i] * prices[i];
         total = total + subtotal;
 
-        // Add a line for this item
         linesHTML += '<div class="summary-line">'
           + '<span>' + emojis[i] + ' ' + names[i] + ' × ' + quantities[i] + '</span>'
           + '<span>MK ' + subtotal.toLocaleString() + '</span>'
@@ -450,13 +440,11 @@
       }
     }
 
-    // Show or hide the "no items" message
     document.getElementById("empty-msg").style.display = anyAdded ? "none" : "block";
 
-    // Put the item lines into the summary
     document.getElementById("summary-lines").innerHTML = linesHTML;
 
-    // Show or hide the total row
+
     var totalRow = document.getElementById("summary-total");
     if (anyAdded) {
       totalRow.style.display = "flex";
@@ -466,7 +454,6 @@
     }
   }
 
-  // Show or hide the address field
   function toggleAddress() {
     var type = document.getElementById("order-type").value;
     var addressGroup = document.getElementById("address-group");
@@ -478,14 +465,12 @@
     }
   }
 
-  // Called when the Place Order button is clicked
   function placeOrder() {
     var name    = document.getElementById("name").value.trim();
     var phone   = document.getElementById("phone").value.trim();
     var type    = document.getElementById("order-type").value;
     var address = document.getElementById("address").value.trim();
 
-    // Check that at least one item has been added
     var anyAdded = false;
     for (var i = 0; i < 5; i++) {
       if (quantities[i] > 0) {
