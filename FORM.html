@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Food Order Form</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -141,11 +139,6 @@
       </div>
     </div>
 
-<<<<<<< HEAD
-    <div class="form-group" id="address-group">
-      <label for="address">Delivery address</label>
-      <input type="text" id="address" placeholder="e.g. Area 23, Lilongwe" />
-=======
     <h2>Review & place order</h2>
 
     <div class="summary-box" id="summary-box">
@@ -155,7 +148,6 @@
         <span>Total</span>
         <span id="total-display">MK 0</span>
       </div>
->>>>>>> 7ce604c29902edba86dafada013a7af741e6c3bc
     </div>
 
     <button type="submit" onclick="placeOrder()">Place Order</button>
@@ -166,139 +158,7 @@
 
   </div>
 
-<<<<<<< HEAD
-  <!-- ── Review & place order ── -->
-  <h2>Review & place order</h2>
-
-  <!-- Summary of selected items + total -->
-  <div class="summary-box" id="summary-box">
-    <div class="empty-msg" id="empty-msg">No items added yet.</div>
-    <div id="summary-lines"></div>
-    <div class="summary-total" id="summary-total" style="display:none">
-      <span>Total</span>
-      <span id="total-display">MK 0</span>
-    </div>
-  </div>
-
-  <button type="submit" onclick="placeOrder()"><img src="group.jpg" alt="Check"> Place Order</button>
-
-  <div class="success" id="success-msg">
-    <img src="group 2.jpg" alt="Celebration"> Order placed! We'll call you to confirm. Thank you!
-  </div>
-
-</div>
-
-<script>
-  var names  = ["Jollof Rice", "Grilled Chicken", "Beef Burger", "Veggie Wrap", "Mango Smoothie"];
-  var emojis = ["<img src='rice and chicken strips.jpg' alt='Rice'>", "<img src='chicken wrap.jpg' alt='Chicken'>", "<img src='pepperoni pizza.jpg' alt='Pizza'>", "<img src='seasoned chips.jpg' alt='Cake'>", "<img src='fanta orange.jpg' alt='Drink'>"];
-  var prices = [3500, 4200, 3800, 2800, 1500];
-
-  var quantities = [0, 0, 0, 0, 0];
-
-  function changeQty(id, change) {
-    var index = id - 1; // convert to array index (0–4)
-
-    quantities[index] = quantities[index] + change;
-    if (quantities[index] < 0) {
-      quantities[index] = 0;
-    }
-
-    document.getElementById("qty" + id).textContent = quantities[index];
-
-    updateSummary();
-  }
-
-  function updateSummary() {
-    var linesHTML = "";
-    var total = 0;
-    var anyAdded = false;
-
-    for (var i = 0; i < 5; i++) {
-      if (quantities[i] > 0) {
-        anyAdded = true;
-        var subtotal = quantities[i] * prices[i];
-        total = total + subtotal;
-
-        linesHTML += '<div class="summary-line">'
-          + '<span>' + emojis[i] + ' ' + names[i] + ' × ' + quantities[i] + '</span>'
-          + '<span>MK ' + subtotal.toLocaleString() + '</span>'
-          + '</div>';
-      }
-    }
-
-    document.getElementById("empty-msg").style.display = anyAdded ? "none" : "block";
-
-    document.getElementById("summary-lines").innerHTML = linesHTML;
-
-
-    var totalRow = document.getElementById("summary-total");
-    if (anyAdded) {
-      totalRow.style.display = "flex";
-      document.getElementById("total-display").textContent = "MK " + total.toLocaleString();
-    } else {
-      totalRow.style.display = "none";
-    }
-  }
-
-  function toggleAddress() {
-    var type = document.getElementById("order-type").value;
-    var addressGroup = document.getElementById("address-group");
-
-    if (type === "pickup") {
-      addressGroup.style.display = "none";
-    } else {
-      addressGroup.style.display = "block";
-    }
-  }
-
-  function placeOrder() {
-    var name    = document.getElementById("name").value.trim();
-    var phone   = document.getElementById("phone").value.trim();
-    var type    = document.getElementById("order-type").value;
-    var address = document.getElementById("address").value.trim();
-
-    var anyAdded = false;
-    for (var i = 0; i < 5; i++) {
-      if (quantities[i] > 0) {
-        anyAdded = true;
-        break;
-      }
-    }
-
-    if (!anyAdded) {
-      alert("Please add at least one item using the + button.");
-      return;
-    }
-
-    if (name === "") {
-      alert("Please enter your name.");
-      return;
-    }
-
-    if (phone === "") {
-      alert("Please enter your phone number.");
-      return;
-    }
-
-    var email = document.getElementById("email").value.trim();
-    if (email === "") {
-      alert("Please enter your email address.");
-      return;
-    }
-
-    if (type === "delivery" && address === "") {
-      alert("Please enter your delivery address.");
-      return;
-    }
-
-    // All good — show the success message
-    document.getElementById("success-msg").style.display = "block";
-    document.getElementById("success-msg").scrollIntoView({ behavior: "smooth" });
-  }
-</script>
-=======
   <script src="script.js"></script>
->>>>>>> 7ce604c29902edba86dafada013a7af741e6c3bc
 
 </body>
 

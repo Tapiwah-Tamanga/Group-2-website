@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <a href="home.html#home">HOME</a>
+    <nav>
+      <a href="Menu.html">MENU</a>
+      <a href="Images.html">IMAGE</a>
+      <a href="FORM.html">FORM</a>
+      <a href="about us.html">ABOUT</a>
+      <a href="CONTACT US.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <div class="form-box">
+
+    <h1>Contact Us</h1>
+    <p class="intro">We'd love to hear from you. Please fill out the form below and we'll get back to you as soon as possible.</p>
+
+    <div class="section">
+      <h2>Your Information</h2>
+
+      <div class="form-group">
+        <label for="contact-name">Full Name</label>
+        <input type="text" id="contact-name" placeholder="e.g. Tapiwah Tamanga" />
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email">Email Address</label>
+        <input type="email" id="contact-email" placeholder="e.g. your.email@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="contact-phone">Phone Number</label>
+        <input type="tel" id="contact-phone" placeholder="e.g. +265 888 000 000" />
+      </div>
+
+      <div class="form-group">
+        <label for="contact-subject">Subject</label>
+        <input type="text" id="contact-subject" placeholder="e.g. Inquiry about catering" />
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Your Message</h2>
+
+      <div class="form-group">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" placeholder="Please type your message here..."></textarea>
+      </div>
+    </div>
+
+    <button type="submit" onclick="sendMessage()">Send Message</button>
+
+    <div class="success" id="success-msg">
+      &#10003; Thank you! We've received your message. We'll be in touch soon.
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

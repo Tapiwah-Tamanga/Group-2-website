@@ -106,3 +106,20 @@ function placeOrder() {
     document.getElementById("success-msg").style.display = "block";
     document.getElementById("success-msg").scrollIntoView({ behavior: "smooth" });
 }
+
+function sendMessage() {
+    var name = document.getElementById("contact-name").value.trim();
+    var email = document.getElementById("contact-email").value.trim();
+    var phone = document.getElementById("contact-phone").value.trim();
+    var subject = document.getElementById("contact-subject").value.trim();
+    var message = document.getElementById("contact-message").value.trim();
+
+    if (name === "") { alert("Please enter your full name."); return; }
+    if (email === "") { alert("Please enter your email address."); return; }
+    if (phone === "") { alert("Please enter your phone number."); return; }
+    if (subject === "") { alert("Please enter a subject."); return; }
+    if (message === "") { alert("Please enter your message."); return; }
+
+    document.getElementById("success-msg").style.display = "block";
+    document.getElementById("success-msg").scrollIntoView({ behavior: "smooth" });
+}
