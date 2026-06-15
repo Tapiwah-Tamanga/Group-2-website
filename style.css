@@ -23,7 +23,6 @@ header {
     font-weight: bold;
     display: flex;
     background: rgba(128, 0, 128, 0.6);
-    backdrop-filter: blur(10px);
     width: 90%;
     margin: 20px auto;
     border-radius: 15px;
@@ -125,9 +124,7 @@ a:hover {
 .gallery-title {
     font-size: 2.5rem;
     margin: 50px 0 25px;
-    background: linear-gradient(45deg, #ff00cc, #333399);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #fff;
     text-align: center;
 }
 
@@ -167,7 +164,6 @@ a:hover {
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
     color: #fff;
     padding: 18px;
     text-align: center;
@@ -189,9 +185,7 @@ a:hover {
     font-size: 24px;
     transition: 0.3s ease;
     border-radius: 0 10px 10px 0;
-    user-select: none;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
     z-index: 10;
 }
 
@@ -457,14 +451,14 @@ button[type="submit"]:hover {
     letter-spacing: 2px;
 }
 
-.about-page>p {
-    color: #000;
+.about-page p {
+    color: #fff;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 10px;
 }
 
-.about-page>img {
+.about-page img {
     width: 250px;
     height: 160px;
     object-fit: cover;
@@ -473,12 +467,18 @@ button[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
+.about-section {
+    background-image: url('mc.jpg');
+    background-size: cover;
+    background-position: center;
+}
 .info-box {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 10px;
+    margin: 50px 0;
 }
 
 .box {
@@ -499,7 +499,7 @@ button[type="submit"]:hover {
 }
 
 .box h3 {
-    color: #cc99ff;
+    color: #fff;
     margin-bottom: 10px;
     font-size: 1.1rem;
     letter-spacing: 1px;
@@ -508,7 +508,7 @@ button[type="submit"]:hover {
 
 .box p {
     font-size: 0.9rem;
-    color: #ddd;
+    color: #fff;
     line-height: 1.6;
 }
 
@@ -560,7 +560,15 @@ table {
     font-family: 'Outfit', sans-serif;
 }
 
-th,
+th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.about-footer p{
+    text-align: center;
+}
+
 td {
     padding: 12px 15px;
     text-align: left;
@@ -587,6 +595,12 @@ tr:last-child td {
 tr:hover td {
     background-color: rgba(128, 0, 128, 0.15);
     border-radius: 8px;
+}
+
+.about-section {
+    background-image: url('mc.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 @media (max-width: 768px) {
@@ -799,7 +813,8 @@ tr:hover td {
         color: #ddd;
         line-height: 1.5;
     }
-     .info-box {
+
+    .info-box {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -818,12 +833,12 @@ tr:hover td {
         border-radius: 8px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
-    
+
     .box h3 {
         font-size: 0.85rem;
         margin: 2px 0 5px;
     }
-    
+
     .box p {
         font-size: 0.75rem;
         line-height: 1.2;
