@@ -447,20 +447,18 @@ button[type="submit"]:hover {
 .about-page h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    background: linear-gradient(45deg, #ff00cc, #333399);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: none;
 }
 
 .about-page h2 {
     font-size: 1.1rem;
-    color: #cc99ff;
+    color: #fff;
     margin: 10px 0 5px;
     letter-spacing: 2px;
 }
 
 .about-page>p {
-    color: #ccc;
+    color: #000;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 10px;
@@ -507,6 +505,7 @@ button[type="submit"]:hover {
     letter-spacing: 1px;
 }
 
+
 .box p {
     font-size: 0.9rem;
     color: #ddd;
@@ -532,9 +531,7 @@ button[type="submit"]:active,
 .menu-title {
     font-size: 2.8rem;
     margin-bottom: 30px;
-    background: linear-gradient(45deg, #ff00cc, #333399);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #fff;
     text-align: center;
 }
 
@@ -792,7 +789,7 @@ tr:hover td {
     }
 
     .box h3 {
-        color: #cc99ff;
+        color: #000;
         margin-bottom: 8px;
         font-size: 1rem;
     }
@@ -802,6 +799,37 @@ tr:hover td {
         color: #ddd;
         line-height: 1.5;
     }
+     .info-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        margin: 75px 0px;
+    }
+
+    .box {
+        width: 31%;
+        min-width: 95px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 8px 4px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    
+    .box h3 {
+        font-size: 0.85rem;
+        margin: 2px 0 5px;
+    }
+    
+    .box p {
+        font-size: 0.75rem;
+        line-height: 1.2;
+        margin: 2px 0;
+    }
+
 }
 
 @media (max-width: 480px) {
