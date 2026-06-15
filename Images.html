@@ -4,73 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Menu Gallery — Feast</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <figure>
-        <h1>Food Menu</h1>
-        <div class="Food">
-            <img src="beef burger.jpg" alt="Beef Burger">
-            <figcaption>Beef Burger</figcaption>
-            <img src="butter fries.jpg" alt="Butter Fries">
-            <figcaption>Butter Fries</figcaption>
-            <img src="chicken kebab.jpg" alt="Chicken Kebab">
-            <figcaption>Chicken Kebab</figcaption>
-        </div>
-        <div class="Food1">
-            <img src="chicken wrap.jpg" alt="Chicken Wrap">
-            <figcaption>Chicken Wrap</figcaption>
-            <img src="chicken wrap (2).jpg" alt="Chicken Wrap (2)">
-            <figcaption>Chicken Wrap (2)</figcaption>
-            <img src="chips and beef.jpg" alt="Chips and Beef">
-            <figcaption>Chips and Beef</figcaption>
-        </div>
-        <div class="Food2">
-            <img src="macaroni.jpg" alt="Macaroni">
-            <figcaption>Macaroni</figcaption>
-            <img src="pepperoni pizza.jpg" alt="Pepperoni Pizza">
-            <figcaption>Pepperoni Pizza</figcaption>
-            <img src="pizza.jpg" alt="Pizza">
-            <figcaption>Pizza</figcaption>
-        </div>
-        <div class="Food3">
-            <img src="rice and chicken strips.jpg" alt="Rice and Chicken Strips">
-            <figcaption>Rice and Chicken Strips</figcaption>
-            <img src="seasoned chips.jpg" alt="Seasoned Chips">
-            <figcaption>Seasoned Chips</figcaption>
-            <img src="shawarma.jpg" alt="Shawarma">
-            <figcaption>Shawarma</figcaption>
-        </div>
-        <div class="Food4">
-            <img src="steak.jpg" alt="Steak">
-            <figcaption>Steak</figcaption>
-            <img src="tacos.jpg" alt="Tacos">
-            <figcaption>Tacos</figcaption>
-        </div>
-        <br>
-        <h1> Drinks menu</h1>
-        <div class="Drinks">
-            <img src="coca-cola.jpg" alt="Coca-Cola">
-            <figcaption>Coca-Cola</figcaption>
-            <img src="fanta orange.jpg" alt="Fanta Orange">
-            <figcaption>Fanta Orange</figcaption>
-            <img src="fanta passion.jpg" alt="Fanta Passion">
-            <figcaption>Fanta Passion</figcaption>
-            <img src="pepsi.jpg" alt="Pepsi">
-            <figcaption>Pepsi</figcaption>
-        </div>
-        <div class="Drinks1">
-            <img src="sobo cherry.png" alt="Sobo Cherry">
-            <figcaption>Sobo Cherry</figcaption>
-            <img src="Sobo_Cocopina_1.png" alt="Sobo Cocopina">
-            <figcaption>Sobo Cocopina</figcaption>
-            <img src="sprite.jpg" alt="Sprite">
-            <figcaption>Sprite</figcaption>
+
+    <header>
+        <a href="home.html#home">HOME</a>
+        <nav>
+            <a href="Menu.html">MENU</a>
+            <a href="Images.html">IMAGE</a>
+            <a href="FORM.html">FORM</a>
+            <a href="about us.html">ABOUT</a>
+        </nav>
+    </header>
+
+    <main class="gallery-page">
+
+        <h1 class="gallery-title">Food Menu</h1>
+
+        <div class="slideshow-container" id="food-slideshow">
+            <div class="slide fade">
+                <img src="beef burger.jpg" alt="Beef Burger">
+                <div class="caption">Beef Burger</div>
+            </div>
+            <div class="slide fade">
+                <img src="butter fries.jpg" alt="Butter Fries">
+                <div class="caption">Butter Fries</div>
+            </div>
+            <div class="slide fade">
+                <img src="chicken kebab.jpg" alt="Chicken Kebab">
+                <div class="caption">Chicken Kebab</div>
+            </div>
+            <div class="slide fade">
+                <img src="chicken wrap.jpg" alt="Chicken Wrap">
+                <div class="caption">Chicken Wrap</div>
+            </div>
+            <div class="slide fade">
+                <img src="chicken wrap (2).jpg" alt="Chicken Wrap (2)">
+                <div class="caption">Chicken Wrap (2)</div>
+            </div>
+            <div class="slide fade">
+                <img src="chips and beef.jpg" alt="Chips and Beef">
+                <div class="caption">Chips and Beef</div>
+            </div>
+            <div class="slide fade">
+                <img src="macaroni.jpg" alt="Macaroni">
+                <div class="caption">Macaroni</div>
+            </div>
+            <div class="slide fade">
+                <img src="pepperoni pizza.jpg" alt="Pepperoni Pizza">
+                <div class="caption">Pepperoni Pizza</div>
+            </div>
+            <div class="slide fade">
+                <img src="pizza.jpg" alt="Pizza">
+                <div class="caption">Pizza</div>
+            </div>
+            <div class="slide fade">
+                <img src="rice and chicken strips.jpg" alt="Rice and Chicken Strips">
+                <div class="caption">Rice and Chicken Strips</div>
+            </div>
+            <div class="slide fade">
+                <img src="seasoned chips.jpg" alt="Seasoned Chips">
+                <div class="caption">Seasoned Chips</div>
+            </div>
+            <div class="slide fade">
+                <img src="shawarma.jpg" alt="Shawarma">
+                <div class="caption">Shawarma</div>
+            </div>
+            <div class="slide fade">
+                <img src="steak.jpg" alt="Steak">
+                <div class="caption">Steak</div>
+            </div>
+            <div class="slide fade">
+                <img src="tacos.jpg" alt="Tacos">
+                <div class="caption">Tacos</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 'food-slideshow')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'food-slideshow')">&#10095;</a>
         </div>
 
-    </figure>
+        <h1 class="gallery-title">Drinks Menu</h1>
+
+        <div class="slideshow-container" id="drinks-slideshow">
+            <div class="slide fade">
+                <img src="coca-cola.jpg" alt="Coca-Cola">
+                <div class="caption">Coca-Cola</div>
+            </div>
+            <div class="slide fade">
+                <img src="fanta orange.jpg" alt="Fanta Orange">
+                <div class="caption">Fanta Orange</div>
+            </div>
+            <div class="slide fade">
+                <img src="fanta passion.jpg" alt="Fanta Passion">
+                <div class="caption">Fanta Passion</div>
+            </div>
+            <div class="slide fade">
+                <img src="pepsi.jpg" alt="Pepsi">
+                <div class="caption">Pepsi</div>
+            </div>
+            <div class="slide fade">
+                <img src="sobo cherry.png" alt="Sobo Cherry">
+                <div class="caption">Sobo Cherry</div>
+            </div>
+            <div class="slide fade">
+                <img src="Sobo_Cocopina_1.png" alt="Sobo Cocopina">
+                <div class="caption">Sobo Cocopina</div>
+            </div>
+            <div class="slide fade">
+                <img src="sprite.jpg" alt="Sprite">
+                <div class="caption">Sprite</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 'drinks-slideshow')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'drinks-slideshow')">&#10095;</a>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2026 Feast Restaurant. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

@@ -1,355 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Food Order Form</title>
-
-  <style>
-    /* ── Page background ── */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111111;
-      display: flex;
-      justify-content: center;
-      padding: 30px 15px;
-    }
-
-    /* ── Dark card that holds the form ── */
-    .form-box {
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      padding: 30px;
-      width: 100%;
-      max-width: 500px;
-      box-shadow: 0 2px 16px rgba(128,0,255,0.2);
-      border: 1px solid #3a1a5e;
-    }
-
-    /* ── Page title ── */
-    h1 {
-      font-size: 24px;
-      color: #ffffff;
-      margin-bottom: 5px;
-    }
-
-    p.intro {
-      color: #a080c0;
-      font-size: 14px;
-      margin-bottom: 25px;
-    }
-
-    /* ── Section headings ── */
-    h2 {
-      font-size: 15px;
-      color: #cc99ff;
-      margin-bottom: 12px;
-      border-bottom: 1px solid #3a1a5e;
-      padding-bottom: 6px;
-    }
-
-    /* ── Each food item row ── */
-    .food-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #2a1a3e;
-    }
-
-    .food-item:last-child {
-      border-bottom: none;
-    }
-
-    /* ── Food name and price on the left ── */
-    .food-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      vertical-align: middle;
-      margin-right: 4px;
-    }
-
-    button[type="submit"] img {
-      width: 18px;
-      height: 18px;
-      margin-right: 6px;
-    }
-
-    .success img {
-      width: 20px;
-      height: 20px;
-      margin-right: 6px;
-    }
-
-    .food-info .name {
-      font-size: 14px;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .food-info .price {
-      font-size: 13px;
-      color: #a080c0;
-    }
-
-    /* ── + / − controls on the right ── */
-    .qty-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* ── The − and + buttons ── */
-    .qty-btn {
-      width: 32px;
-      height: 32px;
-      font-size: 20px;
-      font-weight: bold;
-      border: 1px solid #7b2fff;
-      border-radius: 8px;
-      background-color: #2a0a4a;
-      color: #cc99ff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-    }
-
-    .qty-btn:hover {
-      background-color: #7b2fff;
-      color: #ffffff;
-    }
-
-    /* ── The number shown between the buttons ── */
-    .qty-num {
-      font-size: 15px;
-      font-weight: bold;
-      color: #ffffff;
-      min-width: 20px;
-      text-align: center;
-    }
-
-    /* ── Gap between sections ── */
-    .section {
-      margin-bottom: 24px;
-    }
-
-    /* ── Text inputs and select dropdown ── */
-    .form-group {
-      margin-bottom: 14px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      color: #cc99ff;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 9px 12px;
-      border: 1px solid #3a1a5e;
-      border-radius: 8px;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-      box-sizing: border-box;
-      background-color: #111111;
-      color: #ffffff;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #664488;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #7b2fff;
-    }
-
-    .form-group textarea {
-      height: 80px;
-      resize: vertical;
-    }
-
-    /* ── Order summary box ── */
-    .summary-box {
-      background-color: #111111;
-      border: 1px solid #3a1a5e;
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #a080c0;
-    }
-
-    /* ── Each line in the summary ── */
-    .summary-line {
-      display: flex;
-      justify-content: space-between;
-      padding: 3px 0;
-    }
-
-    /* ── The total line ── */
-    .summary-total {
-      display: flex;
-      justify-content: space-between;
-      font-size: 15px;
-      font-weight: bold;
-      color: #ffffff;
-      border-top: 1px solid #3a1a5e;
-      margin-top: 8px;
-      padding-top: 8px;
-    }
-
-    /* ── "No items yet" message ── */
-    .empty-msg {
-      color: #664488;
-      font-size: 13px;
-    }
-
-    /* ── Submit button ── */
-    button[type="submit"] {
-      width: 100%;
-      padding: 13px;
-      background-color: #7b2fff;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #5a00dd;
-    }
-
-    /* ── Success message (hidden at first) ── */
-    .success {
-      display: none;
-      background-color: #2a0a4a;
-      border: 1px solid #7b2fff;
-      color: #cc99ff;
-      border-radius: 8px;
-      padding: 14px;
-      text-align: center;
-      font-size: 15px;
-      margin-top: 16px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <header class="main-header">
+    <a href="home.html#home">HOME</a>
+    <nav>
+      <a href="Menu.html">MENU</a>
+      <a href="Images.html">IMAGE</a>
+      <a href="FORM.html">FORM</a>
+      <a href="about us.html">ABOUT</a>
+    </nav>
+  </header>
 
-<div class="form-box">
+  <div class="form-box">
 
-  <h1><img src="group.jpg" alt="Food"> Food Order</h1>
-  <p class="intro">Press + to add an item, − to remove. Then fill in your details.</p>
+    <h1> Food Order</h1>
+    <p class="intro">Press + to add an item, − to remove. Then fill in your details.</p>
 
-  <!-- ── Choose food ── -->
-  <div class="section">
-    <h2>Choose your food</h2>
+    <div class="section">
+      <h2>Choose your food</h2>
 
-    <!-- Each row: image + name + price on the left, − qty + on the right -->
-
-    <div class="food-item">
-      <div class="food-info">
-        <img src="rice and chicken strips.jpg" alt="Rice">
-        <div>
-          <div class="name">Jollof Rice</div>
-          <div class="price">MK 3,500</div>
+      <div class="food-item">
+        <div class="food-info">
+          <img src="rice and chicken strips.jpg" alt="Rice">
+          <div>
+            <div class="name">Jollof Rice</div>
+            <div class="price">MK 3,500</div>
+          </div>
+        </div>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(1, -1)">−</button>
+          <span class="qty-num" id="qty1">0</span>
+          <button class="qty-btn" onclick="changeQty(1, +1)">+</button>
         </div>
       </div>
-      <div class="qty-controls">
-        <button class="qty-btn" onclick="changeQty(1, -1)">−</button>
-        <span class="qty-num" id="qty1">0</span>
-        <button class="qty-btn" onclick="changeQty(1, +1)">+</button>
-      </div>
-    </div>
 
-    <div class="food-item">
-      <div class="food-info">
-        <img src="chicken wrap.jpg" alt="Chicken">
-        <div>
-          <div class="name">Chicken Wrap</div>
-          <div class="price">MK 4,200</div>
+      <div class="food-item">
+        <div class="food-info">
+          <img src="chicken wrap.jpg" alt="Chicken">
+          <div>
+            <div class="name">Chicken Wrap</div>
+            <div class="price">MK 4,200</div>
+          </div>
+        </div>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(2, -1)">−</button>
+          <span class="qty-num" id="qty2">0</span>
+          <button class="qty-btn" onclick="changeQty(2, +1)">+</button>
         </div>
       </div>
-      <div class="qty-controls">
-        <button class="qty-btn" onclick="changeQty(2, -1)">−</button>
-        <span class="qty-num" id="qty2">0</span>
-        <button class="qty-btn" onclick="changeQty(2, +1)">+</button>
-      </div>
-    </div>
 
-    <div class="food-item">
-      <div class="food-info">
-        <img src="pepperoni pizza.jpg" alt="Pizza">
-        <div>
-          <div class="name">Pizza</div>
-          <div class="price">MK 19,000</div>
+      <div class="food-item">
+        <div class="food-info">
+          <img src="pepperoni pizza.jpg" alt="Pizza">
+          <div>
+            <div class="name">Pizza</div>
+            <div class="price">MK 19,000</div>
+          </div>
+        </div>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(3, -1)">−</button>
+          <span class="qty-num" id="qty3">0</span>
+          <button class="qty-btn" onclick="changeQty(3, +1)">+</button>
         </div>
       </div>
-      <div class="qty-controls">
-        <button class="qty-btn" onclick="changeQty(3, -1)">−</button>
-        <span class="qty-num" id="qty3">0</span>
-        <button class="qty-btn" onclick="changeQty(3, +1)">+</button>
-      </div>
-    </div>
 
-    <div class="food-item">
-      <div class="food-info">
-        <img src="seasoned chips.jpg" alt="Cake">
-        <div>
-          <div class="name">Cup Cake</div>
-          <div class="price">MK 2,800</div>
+      <div class="food-item">
+        <div class="food-info">
+          <img src="seasoned chips.jpg" alt="Cake">
+          <div>
+            <div class="name">Cup Cake</div>
+            <div class="price">MK 2,800</div>
+          </div>
+        </div>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(4, -1)">−</button>
+          <span class="qty-num" id="qty4">0</span>
+          <button class="qty-btn" onclick="changeQty(4, +1)">+</button>
         </div>
       </div>
-      <div class="qty-controls">
-        <button class="qty-btn" onclick="changeQty(4, -1)">−</button>
-        <span class="qty-num" id="qty4">0</span>
-        <button class="qty-btn" onclick="changeQty(4, +1)">+</button>
-      </div>
-    </div>
 
-    <div class="food-item">
-      <div class="food-info">
-        <img src="fanta orange.jpg" alt="Drink">
-        <div>
-          <div class="name">Fanta</div>
-          <div class="price">MK 1,500</div>
+      <div class="food-item">
+        <div class="food-info">
+          <img src="fanta orange.jpg" alt="Drink">
+          <div>
+            <div class="name">Fanta</div>
+            <div class="price">MK 1,500</div>
+          </div>
+        </div>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(5, -1)">−</button>
+          <span class="qty-num" id="qty5">0</span>
+          <button class="qty-btn" onclick="changeQty(5, +1)">+</button>
         </div>
       </div>
-      <div class="qty-controls">
-        <button class="qty-btn" onclick="changeQty(5, -1)">−</button>
-        <span class="qty-num" id="qty5">0</span>
-        <button class="qty-btn" onclick="changeQty(5, +1)">+</button>
-      </div>
+
     </div>
 
-  </div>
-
-  <!-- ── Your details ── -->
-  <div class="section">
-    <h2>Your details</h2>
+    <div class="section">
+      <h2>Your details</h2>
 
     <div class="form-group">
       <label for="name">Full name</label>
-      <input type="text" id="name" placeholder="e.g. Amara Banda" />
+      <input type="text" id="name" placeholder="e.g. Tapiwah Tamanga" />
     </div>
 
     <div class="form-group">
@@ -359,172 +117,52 @@
 
     <div class="form-group">
       <label for="email">Email address</label>
-      <input type="email" id="email" placeholder="e.g. amara@email.com" />
+      <input type="email" id="email" placeholder="e.g. Tapiwahtamanga@email.com" />
     </div>
 
-    <div class="form-group">
-      <label for="order-type">Order type</label>
-      <select id="order-type" onchange="toggleAddress()">
-        <option value="delivery">Delivery</option>
-        <option value="pickup">Pickup</option>
-      </select>
+      <div class="form-group">
+        <label for="order-type">Order type</label>
+        <select id="order-type" onchange="toggleAddress()">
+          <option value="delivery">Delivery</option>
+          <option value="pickup">Pickup</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="address-group">
+        <label for="address">Delivery address</label>
+        <input type="text" id="address" placeholder="e.g. Area 23, Lilongwe" />
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Special instructions (optional)</label>
+        <textarea id="notes" placeholder="e.g. No onions, extra sauce..."></textarea>
+      </div>
     </div>
 
-    <div class="form-group" id="address-group">
-      <label for="address">Delivery address</label>
-      <input type="text" id="address" placeholder="e.g. Area 3, Lilongwe" />
+    <h2>Review & place order</h2>
+
+    <div class="summary-box" id="summary-box">
+      <div class="empty-msg" id="empty-msg">No items added yet.</div>
+      <div id="summary-lines"></div>
+      <div class="summary-total" id="summary-total" style="display:none">
+        <span>Total</span>
+        <span id="total-display">MK 0</span>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="notes">Special instructions (optional)</label>
-      <textarea id="notes" placeholder="e.g. No onions, extra sauce..."></textarea>
+    <button type="submit" onclick="placeOrder()">Place Order</button>
+
+    <div class="success" id="success-msg">
+      &#10003; Order placed! We'll call you to confirm. Thank you!
     </div>
+
   </div>
 
-  <!-- ── Review & place order ── -->
-  <h2>Review & place order</h2>
-
-  <!-- Summary of selected items + total -->
-  <div class="summary-box" id="summary-box">
-    <div class="empty-msg" id="empty-msg">No items added yet.</div>
-    <div id="summary-lines"></div>
-    <div class="summary-total" id="summary-total" style="display:none">
-      <span>Total</span>
-      <span id="total-display">MK 0</span>
-    </div>
-  </div>
-
-  <button type="submit" onclick="placeOrder()"><img src="group.jpg" alt="Check"> Place Order</button>
-
-  <div class="success" id="success-msg">
-    <img src="group 2.jpg" alt="Celebration"> Order placed! We'll call you to confirm. Thank you!
-  </div>
-
-</div>
-
-<script>
-  // Food item names and prices (index 0 = item 1, index 1 = item 2, etc.)
-  var names  = ["Jollof Rice", "Grilled Chicken", "Beef Burger", "Veggie Wrap", "Mango Smoothie"];
-  var emojis = ["<img src='rice and chicken strips.jpg' alt='Rice'>", "<img src='chicken wrap.jpg' alt='Chicken'>", "<img src='pepperoni pizza.jpg' alt='Pizza'>", "<img src='seasoned chips.jpg' alt='Cake'>", "<img src='fanta orange.jpg' alt='Drink'>"];
-  var prices = [3500, 4200, 3800, 2800, 1500];
-
-  // Quantities start at 0 for all items
-  var quantities = [0, 0, 0, 0, 0];
-
-  // Called when + or − is clicked
-  // id = 1 to 5, change = +1 or -1
-  function changeQty(id, change) {
-    var index = id - 1; // convert to array index (0–4)
-
-    // Update the quantity — don't let it go below 0
-    quantities[index] = quantities[index] + change;
-    if (quantities[index] < 0) {
-      quantities[index] = 0;
-    }
-
-    // Update the number shown on screen
-    document.getElementById("qty" + id).textContent = quantities[index];
-
-    // Refresh the summary section
-    updateSummary();
-  }
-
-  // Rebuild the order summary every time something changes
-  function updateSummary() {
-    var linesHTML = "";
-    var total = 0;
-    var anyAdded = false;
-
-    // Go through each item
-    for (var i = 0; i < 5; i++) {
-      if (quantities[i] > 0) {
-        anyAdded = true;
-        var subtotal = quantities[i] * prices[i];
-        total = total + subtotal;
-
-        // Add a line for this item
-        linesHTML += '<div class="summary-line">'
-          + '<span>' + emojis[i] + ' ' + names[i] + ' × ' + quantities[i] + '</span>'
-          + '<span>MK ' + subtotal.toLocaleString() + '</span>'
-          + '</div>';
-      }
-    }
-
-    // Show or hide the "no items" message
-    document.getElementById("empty-msg").style.display = anyAdded ? "none" : "block";
-
-    // Put the item lines into the summary
-    document.getElementById("summary-lines").innerHTML = linesHTML;
-
-    // Show or hide the total row
-    var totalRow = document.getElementById("summary-total");
-    if (anyAdded) {
-      totalRow.style.display = "flex";
-      document.getElementById("total-display").textContent = "MK " + total.toLocaleString();
-    } else {
-      totalRow.style.display = "none";
-    }
-  }
-
-  // Show or hide the address field
-  function toggleAddress() {
-    var type = document.getElementById("order-type").value;
-    var addressGroup = document.getElementById("address-group");
-
-    if (type === "pickup") {
-      addressGroup.style.display = "none";
-    } else {
-      addressGroup.style.display = "block";
-    }
-  }
-
-  // Called when the Place Order button is clicked
-  function placeOrder() {
-    var name    = document.getElementById("name").value.trim();
-    var phone   = document.getElementById("phone").value.trim();
-    var type    = document.getElementById("order-type").value;
-    var address = document.getElementById("address").value.trim();
-
-    // Check that at least one item has been added
-    var anyAdded = false;
-    for (var i = 0; i < 5; i++) {
-      if (quantities[i] > 0) {
-        anyAdded = true;
-        break;
-      }
-    }
-
-    if (!anyAdded) {
-      alert("Please add at least one item using the + button.");
-      return;
-    }
-
-    if (name === "") {
-      alert("Please enter your name.");
-      return;
-    }
-
-    if (phone === "") {
-      alert("Please enter your phone number.");
-      return;
-    }
-
-    var email = document.getElementById("email").value.trim();
-    if (email === "") {
-      alert("Please enter your email address.");
-      return;
-    }
-
-    if (type === "delivery" && address === "") {
-      alert("Please enter your delivery address.");
-      return;
-    }
-
-    // All good — show the success message
-    document.getElementById("success-msg").style.display = "block";
-    document.getElementById("success-msg").scrollIntoView({ behavior: "smooth" });
-  }
-</script>
+  <script src="script.js"></script>
+  <footer>
+        <p>&copy; 2026 Feast Restaurant. All rights reserved.</p>
+    </footer>
 
 </body>
+
 </html>
